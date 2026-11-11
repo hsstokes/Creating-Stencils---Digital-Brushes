@@ -288,6 +288,17 @@ footer { margin-top: 40px; font-family: 'Space Mono', monospace; font-size: 0.75
 .btn.gold { background: var(--gold); color: #fff; border-color: var(--gold); }
 .file { font-family: 'Space Mono', monospace; font-size: 0.85rem; background: var(--paper); padding: 1px 6px; border: 1px dashed var(--concrete); word-break: break-all; }
 .checklist.ink { border-top: 6px solid var(--ink); } .checklist.ink input { accent-color: var(--ink); }
+
+/* Stuck? troubleshooting */
+.stuck { background: #fff; border: 2px solid var(--ink); margin: 20px 0; }
+.stuck .stuck-head { background: var(--ink); color: #fff; font-family: 'Space Mono', monospace; font-weight: 700; padding: 10px 16px; }
+.stuck .row { display: grid; grid-template-columns: 1fr 1.4fr; border-top: 1px dashed var(--warm-mid); }
+.stuck .row:first-of-type { border-top: 0; }
+.stuck .prob, .stuck .fix { padding: 10px 16px; font-size: 0.92rem; }
+.stuck .prob { font-weight: 600; background: var(--paper); }
+.stuck .prob::before { content: "✗ "; color: #c62828; }
+.stuck .fix::before { content: "→ "; color: var(--teal); font-weight: 700; }
+@media (max-width: 600px) { .stuck .row { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -404,7 +415,8 @@ footer { margin-top: 40px; font-family: 'Space Mono', monospace; font-size: 0.75
       <button class="step-head"><span class="step-num bg-teal">3</span>Remove the white areas<span class="arrow">▶</span></button>
       <div class="step-body">
         <ol>
-          <li>Select the white areas.</li>
+          <li>Use the <strong>Rectangular Marquee Tool</strong> <span class="key">M</span>. Select a small white area.</li>
+          <li>Go to <span class="path">Select › Similar</span>. Now all the white areas are selected.</li>
           <li>Press <span class="key">Delete</span>.</li>
         </ol>
         <img src="step3_remove_white.jpg" alt="Remove white areas" class="zoom">
@@ -457,6 +469,15 @@ footer { margin-top: 40px; font-family: 'Space Mono', monospace; font-size: 0.75
         <figure><img src="example2.jpg" alt="Stencil example 2" class="zoom"><figcaption>Stencil example</figcaption></figure>
         <figure><img src="example3.jpg" alt="Stencil example 3" class="zoom"><figcaption>Stencil example</figcaption></figure>
       </div>
+    </div>
+
+    <div class="stuck">
+      <div class="stuck-head">🆘 Stuck? Try this</div>
+      <div class="row"><div class="prob">I press Delete and nothing happens.</div><div class="fix">Look at the Layers panel (<span class="path">Window › Layers</span>). Click the correct layer first. Then press <span class="key">Delete</span>.</div></div>
+      <div class="row"><div class="prob">A “Fill” window opens when I press Delete.</div><div class="fix">You are on a locked <strong>Background</strong> layer. Click <strong>Cancel</strong>. Double-click the Background layer, then click <strong>OK</strong>. Try again.</div></div>
+      <div class="row"><div class="prob">I deleted the wrong part.</div><div class="fix">Undo: <span class="key">Cmd + Z</span></div></div>
+      <div class="row"><div class="prob">The marching ants won’t go away.</div><div class="fix">Deselect: <span class="key">Cmd + D</span></div></div>
+      <div class="row"><div class="prob">My stencil is too big or too small.</div><div class="fix">Free Transform: <span class="key">Cmd + T</span>. Drag a corner. Press <span class="key">Enter</span>.</div></div>
     </div>
 
     <div class="checklist teal" id="cl-task1">
@@ -548,6 +569,15 @@ footer { margin-top: 40px; font-family: 'Space Mono', monospace; font-size: 0.75
       </div>
     </div>
 
+    <div class="stuck">
+      <div class="stuck-head">🆘 Stuck? Try this</div>
+      <div class="row"><div class="prob">My brush is a big rectangle.</div><div class="fix">Select <strong>only</strong> your stencil shape before <span class="path">Edit › Define Brush Preset</span>.</div></div>
+      <div class="row"><div class="prob">My brush is grey or faint.</div><div class="fix">Black = strong paint. Grey = weak paint. Use Threshold to make your stencil pure black first.</div></div>
+      <div class="row"><div class="prob">My brush covers the whole page.</div><div class="fix">Make it smaller: press <span class="key">[</span> many times, or change <strong>Size</strong> at the top of the screen.</div></div>
+      <div class="row"><div class="prob">I can’t find my brush.</div><div class="fix">Open <span class="path">Window › Brushes</span>. Your brush is at the bottom of the list.</div></div>
+      <div class="row"><div class="prob">Nothing paints.</div><div class="fix">Check you are on a normal layer, not a hidden or locked one. Check your colour is not white.</div></div>
+    </div>
+
     <div class="checklist pink" id="cl-task2">
       <h3>Task 2 checklist</h3>
       <label><input type="checkbox"><span>Brush defined (Edit › Define Brush Preset)</span></label>
@@ -633,6 +663,13 @@ footer { margin-top: 40px; font-family: 'Space Mono', monospace; font-size: 0.75
     <div class="example">
       <div class="label">Click to enlarge</div>
       <img src="doc_example1.jpg" alt="Example of process documentation" class="zoom">
+    </div>
+
+    <div class="stuck">
+      <div class="stuck-head">🆘 Stuck? Try this</div>
+      <div class="row"><div class="prob">How do I take a screenshot? (Mac)</div><div class="fix"><span class="key">Cmd + Shift + 4</span>, then drag over the area. It saves to your Desktop.</div></div>
+      <div class="row"><div class="prob">How do I take a screenshot? (Windows)</div><div class="fix"><span class="key">Win + Shift + S</span>, then drag over the area.</div></div>
+      <div class="row"><div class="prob">My PDF won’t download.</div><div class="fix">Check you added your name and at least one screenshot. Then click <strong>Download Progress Report</strong> again.</div></div>
     </div>
 
     <div class="checklist blue" id="cl-report">
