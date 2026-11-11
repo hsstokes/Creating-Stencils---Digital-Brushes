@@ -299,6 +299,9 @@ footer { margin-top: 40px; font-family: 'Space Mono', monospace; font-size: 0.75
 .stuck .prob::before { content: "✗ "; color: #c62828; }
 .stuck .fix::before { content: "→ "; color: var(--teal); font-weight: 700; }
 @media (max-width: 600px) { .stuck .row { grid-template-columns: 1fr; } }
+
+/* screenshot slots: hidden until the file exists */
+.shot { display:block; max-width:100%; width:520px; height:auto; border:2px solid #1a1a1a; margin:10px 0; cursor:zoom-in; }
 </style>
 </head>
 <body>
@@ -453,7 +456,7 @@ footer { margin-top: 40px; font-family: 'Space Mono', monospace; font-size: 0.75
           <li>Format: <strong>JPG</strong>. Click <strong>Export</strong>.</li>
           <li>Name it <span class="file">FULL_NAME_stencil.jpg</span></li>
         </ol>
-      </div>
+      <img class="shot" src="https://hsstokes.github.io/Creating-Stencils---Digital-Brushes/shots/export-as-jpg.png" alt="Export As window, Format JPG" loading="lazy" onerror="this.remove()" onclick="window.open(this.src)"></div>
     </div>
 
     <h2>Helpful shortcuts</h2>
